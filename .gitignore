@@ -1,0 +1,12 @@
+# Exclude temporary scripts
+*.ps1
+update_game.ps1
+fix_and_optimize.ps1
+fix_csp.ps1
+safe_layout.ps1
+
+# Exclude local assets backup if needed (but we actually need the assets folder for the pngs)
+# assets/SofloWheelieLife.html # We might want to keep this or not.
+# Since SofloWheelieLife.html in root is the one used by index.html, 
+# the one in assets/ is a backup. I'll exclude the backup.
+assets/SofloWheelieLife.html
