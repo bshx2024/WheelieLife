@@ -1,1181 +1,1408 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0c0c0e">
-
-    <!-- Primary Meta Tags -->
-    <title>Wheelie Life – Free Motorcycle Wheelie Stunt Game Online</title>
-    <meta name="title" content="Wheelie Life – Free Motorcycle Wheelie Stunt Game Online">
-    <meta name="description"
-        content="Wheelie Life is a free online motorcycle wheelie simulator and stunt game set in South Florida. Master wheelie balance, chain insane tricks, and climb the stunt leaderboards – all in your browser, no download required.">
-    <meta name="keywords"
-        content="wheelie life, wheelie game, motorcycle stunt game, bike wheelie simulator, soflo wheelie life, free motorcycle game, online stunt game, wheelie simulator, browser game, motorcycle physics game, stunt leaderboards">
-    <meta name="author" content="Soflo Wheelie Life">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://wheelielife.top/">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wheelielife.top/">
-    <meta property="og:title" content="Wheelie Life – Free Motorcycle Wheelie Stunt Game Online">
-    <meta property="og:description"
-        content="Master epic motorcycle wheelies in the ultimate stunt simulator. Free to play, no download. Start your wheelie journey now!">
-    <meta property="og:image" content="https://wheelielife.top/assets/og-image.jpg">
-    <meta property="og:site_name" content="Wheelie Life">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://wheelielife.top/">
-    <meta property="twitter:title" content="Wheelie Life – Free Motorcycle Stunt Game">
-    <meta property="twitter:description"
-        content="Experience the thrill of motorcycle wheelies. Free online game, play instantly!">
-    <meta property="twitter:image" content="https://wheelielife.top/assets/twitter-card.jpg">
-
-    <!-- Structured Data / Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "VideoGame",
-      "name": "Wheelie Life",
-      "alternateName": "Soflo Wheelie Life",
-      "description": "A free online motorcycle wheelie simulator and stunt game set in South Florida. Use realistic bike physics, master wheelie balance, and chain insane tricks to climb the stunt leaderboards.",
-      "url": "https://wheelielife.top/",
-      "image": "https://wheelielife.top/assets/og-image.jpg",
-      "genre": ["Racing", "Simulation", "Stunt", "Sports"],
-      "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
-      "playMode": "SinglePlayer",
-      "applicationCategory": "Game",
-      "operatingSystem": "Any (Web Browser)",
-      "inLanguage": "en",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "1547",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "gameItem": {
-        "@type": "Thing",
-        "name": "Motorcycle"
-      },
-      "keywords": "wheelie, motorcycle game, stunt game, browser game, free game, wheelie simulator, South Florida",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Wheelie Life",
-        "url": "https://wheelielife.top/"
-      }
-    }
-    </script>
-
-    <!-- Organization Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Wheelie Life",
-      "url": "https://wheelielife.top/",
-      "logo": "https://wheelielife.top/assets/logo.png",
-      "sameAs": []
-    }
-    </script>
-
-    <!-- BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://wheelielife.top/"
-      }]
-    }
-    </script>
-
-    <!-- Modern Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap"
-        rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-color: #0c0c0e;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --accent-cyan: #00f2ff;
-            --accent-green: #39ff14;
-            --text-main: #ffffff;
-            --text-muted: #a0a0ab;
-            --border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Outfit', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 60px 20px 40px;
-            background: linear-gradient(180deg, rgba(0, 242, 255, 0.05) 0%, transparent 100%);
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin: 0 0 20px;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.3));
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from {
-                filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.3));
-            }
-            to {
-                filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.6));
-            }
-        }
-
-        .hero-subtitle {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 900px;
-            margin: 0 auto 30px;
-            line-height: 1.8;
-        }
-
-        .hero-cta {
-            display: inline-block;
-            padding: 18px 50px;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
-            color: #000;
-            font-size: 1.3rem;
-            font-weight: 800;
-            text-decoration: none;
-            text-transform: uppercase;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.3);
-            letter-spacing: 1px;
-        }
-
-        .hero-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 242, 255, 0.5);
-        }
-
-        .hero-tags {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .hero-tags span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .hero-tags span::before {
-            content: '✓';
-            color: var(--accent-green);
-            font-weight: bold;
-        }
-
-        /* Game Section */
-        .game-section {
-            padding: 40px 0;
-        }
-
-        .game-intro-text {
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
-
-        .game-container {
-            position: relative;
-            margin: 0 auto 40px;
-            max-width: 960px;
-            aspect-ratio: 480 / 360;
-            background: #000;
-            border: 4px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        .game-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-
-        .fullscreen-btn {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            width: 40px;
-            height: 40px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 2px solid var(--accent-cyan);
-            border-radius: 8px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 100;
-        }
-
-        .fullscreen-btn:hover {
-            background: rgba(0, 242, 255, 0.2);
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
-        }
-
-        .fullscreen-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--accent-cyan);
-        }
-
-        .game-container:fullscreen,
-        .game-container:-webkit-full-screen,
-        .game-container:-moz-full-screen,
-        .game-container:-ms-fullscreen {
-            max-width: 100%;
-            aspect-ratio: auto;
-            border-radius: 0;
-            border: none;
-        }
-
-        /* Quick Controls */
-        .quick-controls {
-            max-width: 900px;
-            margin: 0 auto 20px;
-            padding: 30px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-        }
-
-        .quick-controls h3 {
-            font-size: 1.5rem;
-            margin: 0 0 20px;
-            color: var(--accent-cyan);
-            text-align: center;
-        }
-
-        .controls-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .control-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .control-key {
-            min-width: 35px;
-            padding: 8px 12px;
-            background: rgba(0, 242, 255, 0.1);
-            border: 1px solid var(--accent-cyan);
-            border-radius: 6px;
-            font-weight: 700;
-            text-align: center;
-            color: var(--accent-cyan);
-            font-size: 0.9rem;
-        }
-
-        .control-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .safety-notice {
-            text-align: center;
-            padding: 15px;
-            background: rgba(255, 68, 68, 0.1);
-            border: 1px solid rgba(255, 68, 68, 0.3);
-            border-radius: 8px;
-            color: #ff9999;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        /* Play Other Games */
-        .other-games {
-            max-width: 900px;
-            margin: 40px auto 20px;
-            padding: 30px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-        }
-
-        .other-games h3 {
-            font-size: 1.5rem;
-            margin: 0 0 25px;
-            color: var(--accent-green);
-            text-align: center;
-        }
-
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .game-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: block;
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2);
-        }
-
-        .game-thumbnail {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            background: linear-gradient(135deg, rgba(0, 242, 255, 0.1), rgba(57, 255, 20, 0.1));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .game-info {
-            padding: 15px;
-        }
-
-        .game-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--text-main);
-            margin: 0 0 8px;
-            text-align: center;
-        }
-
-        .game-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin: 0;
-            text-align: center;
-            line-height: 1.5;
-        }
-
-        .coming-soon-badge {
-            display: inline-block;
-            padding: 4px 10px;
-            background: rgba(57, 255, 20, 0.1);
-            border: 1px solid var(--accent-green);
-            border-radius: 20px;
-            font-size: 0.75rem;
-            color: var(--accent-green);
-            margin-top: 8px;
-        }
-
-        /* Section Title */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin: 80px 0 50px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent-cyan);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        /* How to Play Steps */
-        .how-to-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 0 auto 80px;
-        }
-
-        .step {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .step:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-cyan);
-        }
-
-        .step-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .step-content {
-            padding: 25px;
-        }
-
-        .step-num {
-            display: inline-block;
-            color: var(--accent-cyan);
-            font-weight: 800;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .step h3 {
-            font-size: 1.4rem;
-            margin: 0 0 15px;
-            color: var(--accent-green);
-        }
-
-        .step p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin-bottom: 10px;
-        }
-
-        .step p:last-child {
-            margin-bottom: 0;
-        }
-
-        .step strong {
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
-        .step ul {
-            margin: 15px 0 15px 20px;
-            color: var(--text-muted);
-            line-height: 2;
-        }
-
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-cyan);
-        }
-
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin: 0 0 15px;
-            color: var(--accent-cyan);
-        }
-
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        /* Device Support */
-        .device-support {
-            max-width: 900px;
-            margin: 0 auto 80px;
-            text-align: center;
-        }
-
-        .device-support p {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .device-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            text-align: left;
-        }
-
-        .device-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        .device-item strong {
-            color: var(--accent-green);
-            font-size: 1.1rem;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .device-item span {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            margin-bottom: 80px;
-        }
-
-        .faq-item {
-            max-width: 900px;
-            margin: 0 auto 30px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px;
-        }
-
-        .faq-item h3 {
-            font-size: 1.3rem;
-            margin: 0 0 15px;
-            color: var(--accent-green);
-        }
-
-        .faq-item p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            line-height: 1.8;
-            margin: 0;
-        }
-
-        .faq-item strong {
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
-        /* More Content Section */
-        .more-content {
-            max-width: 900px;
-            margin: 0 auto 80px;
-        }
-
-        .content-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .content-link {
-            display: block;
-            padding: 25px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--accent-cyan);
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .content-link:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .hero-cta {
-                font-size: 1.1rem;
-                padding: 15px 40px;
-            }
-
-            .hero-tags {
-                font-size: 0.85rem;
-                gap: 15px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .step h3 {
-                font-size: 1.5rem;
-            }
-
-            .game-container {
-                margin: 20px 10px;
-            }
-
-            .controls-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .games-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .games-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Wheelie Life – Free Motorcycle Wheelie Stunt Game Online</h1>
-            <p class="hero-subtitle">
-                Wheelie Life is a free online motorcycle wheelie simulator and stunt game set in South Florida. 
-                Use realistic bike physics, master wheelie balance, and chain insane tricks to climb the stunt 
-                leaderboards – all in your browser, no download required.
-            </p>
-            <a href="#game" class="hero-cta">Play Now</a>
-            <div class="hero-tags">
-                <span>Free to play</span>
-                <span>No download</span>
-                <span>Browser game</span>
-                <span>Desktop & mobile</span>
-            </div>
-        </div>
-    </section>
-
-    <main class="container">
-        <!-- Game Section -->
-        <section id="game" class="game-section">
-            <p class="game-intro-text">Jump into the streets of South Florida and start your stunt session.</p>
-            
-            <div class="game-container" id="gameContainer">
-                <button class="fullscreen-btn" id="fullscreenBtn" title="Toggle fullscreen mode" aria-label="Toggle fullscreen">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
-                    </svg>
-                </button>
-                <iframe src="https://wheelielife.top/SofloWheelieLife.html" 
-                        title="Wheelie Life - Free Motorcycle Wheelie Stunt Game"
-                        allowfullscreen
-                        loading="lazy"></iframe>
-            </div>
-
-            <!-- Quick Controls -->
-            <div class="quick-controls">
-                <h3>Quick Controls</h3>
-                <div class="controls-grid">
-                    <div class="control-item">
-                        <span class="control-key">A</span>
-                        <span class="control-desc">Brake and lean back</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">D</span>
-                        <span class="control-desc">Throttle / move forward</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">S</span>
-                        <span class="control-desc">Knee trick</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">W</span>
-                        <span class="control-desc">Seat stand</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">E</span>
-                        <span class="control-desc">Hand drag</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">R</span>
-                        <span class="control-desc">No hands</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">F</span>
-                        <span class="control-desc">Change bikes</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">G</span>
-                        <span class="control-desc">Change helmets</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">C</span>
-                        <span class="control-desc">Foot over bar</span>
-                    </div>
-                    <div class="control-item">
-                        <span class="control-key">D + Space</span>
-                        <span class="control-desc">Accelerate without wheelie</span>
-                    </div>
-                </div>
-                <p class="safety-notice">
-                    ⚠️ Enjoy the stunt life in-game only – do not try these tricks in real life.
-                </p>
-            </div>
-
-            <!-- Play Other Games -->
-            <div class="other-games">
-                <h3>Play Other Games</h3>
-                <div class="games-grid">
-                    <a href="moto-x3m.html" class="game-card" aria-label="Play Moto X3M motorcycle racing game">
-                        <div class="game-thumbnail">
-                            <img src="https://i.imgur.com/ahKFPfz.png" alt="Moto X3M game" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="game-info">
-                            <div class="game-title">Moto X3M</div>
-                            <p class="game-desc">Extreme bike racing with crazy stunts and obstacles</p>
-                            <span class="coming-soon-badge" style="background: rgba(0, 242, 255, 0.1); border-color: var(--accent-cyan); color: var(--accent-cyan);">Play Now</span>
-                        </div>
-                    </a>
-
-                    <a href="bike-trials.html" class="game-card" aria-label="Play Bike Trials motorcycle balance game">
-                        <div class="game-thumbnail">
-                            <img src="https://i.imgur.com/5aQ0KY1.png" alt="Bike Trials game" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="game-info">
-                            <div class="game-title">Bike Trials</div>
-                            <p class="game-desc">Master balance and precision in challenging trials</p>
-                            <span class="coming-soon-badge" style="background: rgba(0, 242, 255, 0.1); border-color: var(--accent-cyan); color: var(--accent-cyan);">Play Now</span>
-                        </div>
-                    </a>
-
-                    <a href="stunt-rider.html" class="game-card" aria-label="Play Stunt Rider motorcycle stunt game">
-                        <div class="game-thumbnail">
-                            <img src="https://i.imgur.com/MydaH7p.png" alt="Stunt Rider game" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="game-info">
-                            <div class="game-title">Stunt Rider</div>
-                            <p class="game-desc">Perform epic stunts in urban environments</p>
-                            <span class="coming-soon-badge" style="background: rgba(0, 242, 255, 0.1); border-color: var(--accent-cyan); color: var(--accent-cyan);">Play Now</span>
-                        </div>
-                    </a>
-
-                    <a href="#bike-race-pro" class="game-card" aria-label="Play Bike Race Pro - Coming Soon">
-                        <div class="game-thumbnail" role="img" aria-label="Bike Race Pro game icon">🏆</div>
-                        <div class="game-info">
-                            <div class="game-title">Bike Race Pro</div>
-                            <p class="game-desc">Compete in fast-paced motorcycle races</p>
-                            <span class="coming-soon-badge">Coming Soon</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- How to Play Section -->
-        <h2 class="section-title">How to Play Wheelie Life</h2>
-        <div class="how-to-steps">
-            <div class="step">
-                <img src="assets/step1.png"
-                    alt="Wheelie Life Game - Click green flag to start motorcycle wheelie stunt session"
-                    class="step-img"
-                    width="400"
-                    height="200"
-                    loading="lazy">
-                <div class="step-content">
-                    <span class="step-num">STEP 01</span>
-                    <h3>1. Start Your Stunt Session</h3>
-                    <p>
-                        Click the neon green flag to start your ride in a South Florida city. Use <strong>D</strong> to 
-                        throttle forward and <strong>A</strong> to brake and control your wheelie angle.
-                    </p>
-                </div>
-            </div>
-
-            <div class="step">
-                <img src="assets/step2.png"
-                    alt="Wheelie Life Controls - Master motorcycle balance with keyboard controls" 
-                    class="step-img"
-                    width="400"
-                    height="200"
-                    loading="lazy">
-                <div class="step-content">
-                    <span class="step-num">STEP 02</span>
-                    <h3>2. Master Wheelies and Balance</h3>
-                    <p>
-                        Tap <strong>D</strong> to lift the front wheel and use <strong>A</strong> to keep your balance 
-                        without flipping over. For pure acceleration without a wheelie, hold <strong>D and Space</strong> 
-                        at the same time. Learning this balance is the key to high scores in this motorcycle wheelie simulator.
-                    </p>
-                </div>
-            </div>
-
-            <div class="step">
-                <img src="assets/step3.png" 
-                    alt="Wheelie Life Scoring - Build combos and dominate stunt leaderboards"
-                    class="step-img"
-                    width="400"
-                    height="200"
-                    loading="lazy">
-                <div class="step-content">
-                    <span class="step-num">STEP 03</span>
-                    <h3>3. Chain Tricks and Climb the Leaderboards</h3>
-                    <p>
-                        Once your wheelie is stable, start adding tricks with <strong>W</strong>, <strong>S</strong>, 
-                        <strong>E</strong>, and <strong>R</strong>. Use:
-                    </p>
-                    <ul>
-                        <li><strong>S</strong> for a knee trick</li>
-                        <li><strong>W</strong> for a seat stand</li>
-                        <li><strong>E</strong> for a hand drag</li>
-                        <li><strong>R</strong> for no-hands</li>
-                    </ul>
-                    <p>
-                        Combine tricks, keep your wheelie going, and avoid crashing to build massive combos and push 
-                        your score up the global stunt leaderboards.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Game Features Section -->
-        <h2 class="section-title">Game Features</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>Realistic wheelie physics</h3>
-                <p>
-                    Experience responsive motorcycle physics where throttle, brake, and body position control every stunt.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <h3>Deep trick system</h3>
-                <p>
-                    Use W, S, E, and R for seat stands, knee tricks, hand drags, and no-hands combos. Mix tricks 
-                    during wheelies for higher scores and style points.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <h3>Bike and helmet customization</h3>
-                <p>
-                    Press F to change bikes and G to change helmets, find your perfect stunt setup, and ride in 
-                    your own style.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <h3>South Florida stunt life</h3>
-                <p>
-                    Ride through a SoFlo-inspired city built for bike life, wheelies, and long stunt lines.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <h3>Global online leaderboards</h3>
-                <p>
-                    Compete against riders worldwide and see where your stunts rank.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <h3>Free browser game – no download</h3>
-                <p>
-                    Play instantly in your browser on desktop or mobile – no installation, no hidden costs.
-                </p>
-            </div>
-        </div>
-
-        <!-- Device Support Section -->
-        <h2 class="section-title">Play on Any Device</h2>
-        <div class="device-support">
-            <p>
-                Wheelie Life is fully responsive and optimized for both desktop and mobile browsers. You can enjoy 
-                smooth motorcycle wheelie action on your computer, laptop, tablet, or phone – directly in your browser.
-            </p>
-            <div class="device-list">
-                <div class="device-item">
-                    <strong>Desktop & laptop</strong>
-                    <span>Best control with A, D, W, S, E, R, F, G, C, and Space.</span>
-                </div>
-                <div class="device-item">
-                    <strong>Tablet</strong>
-                    <span>Quick stunt sessions on a bigger touch screen.</span>
-                </div>
-                <div class="device-item">
-                    <strong>Mobile browser</strong>
-                    <span>Play on the go without downloading anything.</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- FAQ Section -->
-        <h2 class="section-title">Wheelie Life FAQ – Frequently Asked Questions</h2>
-        <div class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
-            
-            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h3 itemprop="name">What is Wheelie Life?</h3>
-                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">
-                        Wheelie Life (Soflo Wheelie Life) is a free online motorcycle wheelie simulator and stunt game. 
-                        It focuses on realistic bike balance, wheelie tricks, and chasing high scores in a South 
-                        Florida–inspired city.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h3 itemprop="name">How do I play Wheelie Life?</h3>
-                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">
-                        Use <strong>A</strong> and <strong>D</strong> to control your bike: D for throttle and A for 
-                        brake and balance. Once your wheelie is stable, add tricks with <strong>W</strong>, 
-                        <strong>S</strong>, <strong>E</strong>, and <strong>R</strong>. You can change bikes with 
-                        <strong>F</strong>, change helmets with <strong>G</strong>, and use <strong>C</strong> for a 
-                        foot over bar. For acceleration without a wheelie, hold <strong>D and Space</strong> at the 
-                        same time.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h3 itemprop="name">Is Wheelie Life free to play?</h3>
-                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">
-                        Yes. Wheelie Life is 100% free to play. This motorcycle wheelie game runs completely in your 
-                        web browser with no downloads, no installation, and no hidden costs.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h3 itemprop="name">Can I play Wheelie Life on mobile?</h3>
-                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">
-                        Absolutely. Wheelie Life is fully responsive and optimized for mobile browsers. Just open the 
-                        game on your phone or tablet and start riding – no app store required.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h3 itemprop="name">Is Wheelie Life a realistic motorcycle wheelie simulator?</h3>
-                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">
-                        Wheelie Life is designed to capture the feel of stunt riding in a simple, accessible browser 
-                        game. Throttle, brake, balance, and timing all matter if you want to hold long wheelies and 
-                        land big tricks.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h3 itemprop="name">Do I need to download or install anything?</h3>
-                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">
-                        No. Wheelie Life is a browser-based motorcycle stunt game. Just open the website, hit play, 
-                        and you are riding instantly without any downloads.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h3 itemprop="name">Should I try these wheelie tricks in real life?</h3>
-                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">
-                        No. Wheelie Life is a safe way to enjoy stunt riding in a game. Do not try these tricks in 
-                        real life – keep the stunts on screen only.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- More Content Section -->
-        <h2 class="section-title">More from Wheelie Life</h2>
-        <div class="more-content">
-            <div class="content-links">
-                <a href="#tips" class="content-link" aria-label="Read Wheelie Life tips and tricks guide">Wheelie Life Tips & Tricks</a>
-                <a href="#physics" class="content-link" aria-label="Learn about motorcycle wheelie physics">Motorcycle Wheelie Physics Explained</a>
-                <a href="#games" class="content-link" aria-label="Discover more online bike stunt games">Best Online Bike Stunt Games</a>
-            </div>
-        </div>
-
-    </main>
-
-    <footer>
-        <div class="container">
-            &copy; 2025 Wheelie Life. Built with passion for the ride.
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scroll to game section
-        document.querySelector('.hero-cta').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('game').scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // Fullscreen functionality
-        const gameContainer = document.getElementById('gameContainer');
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
-
-        fullscreenBtn.addEventListener('click', function () {
-            if (!document.fullscreenElement &&
-                !document.webkitFullscreenElement &&
-                !document.mozFullScreenElement &&
-                !document.msFullscreenElement) {
-                // Enter fullscreen
-                if (gameContainer.requestFullscreen) {
-                    gameContainer.requestFullscreen();
-                } else if (gameContainer.mozRequestFullScreen) {
-                    gameContainer.mozRequestFullScreen();
-                } else if (gameContainer.webkitRequestFullscreen) {
-                    gameContainer.webkitRequestFullscreen();
-                } else if (gameContainer.msRequestFullscreen) {
-                    gameContainer.msRequestFullscreen();
-                }
-            } else {
-                // Exit fullscreen
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.mozCancelFullScreen) {
-                    document.mozCancelFullScreen();
-                } else if (document.webkitExitFullscreen) {
-                    document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
-                }
-            }
-        });
-
-        // Update button icon when fullscreen state changes
-        document.addEventListener('fullscreenchange', updateFullscreenButton);
-        document.addEventListener('webkitfullscreenchange', updateFullscreenButton);
-        document.addEventListener('mozfullscreenchange', updateFullscreenButton);
-        document.addEventListener('MSFullscreenChange', updateFullscreenButton);
-
-        function updateFullscreenButton() {
-            const isFullscreen = document.fullscreenElement ||
-                document.webkitFullscreenElement ||
-                document.mozFullScreenElement ||
-                document.msFullscreenElement;
-
-            if (isFullscreen) {
-                fullscreenBtn.innerHTML = `
-                    <svg viewBox="0 0 24 24">
-                        <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/>
-                    </svg>
-                `;
-                fullscreenBtn.title = 'Exit Fullscreen';
-            } else {
-                fullscreenBtn.innerHTML = `
-                    <svg viewBox="0 0 24 24">
-                        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
-                    </svg>
-                `;
-                fullscreenBtn.title = 'Fullscreen';
-            }
-        }
-    </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GHQ3S1667"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-8GHQ3S1667');
-    </script>
-
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0c0c0e">
+
+    <!-- Primary Meta Tags -->
+    <title>Wheelie Life Game 🏍️ Play Free Wheelie Simulator Online (Unblocked)</title>
+    <meta name="title" content="Wheelie Life Game 🏍️ Play Free Wheelie Simulator Online (Unblocked)">
+    <meta name="description"
+        content="Play the official Wheelie Life game online for free! 🎮 Unblocked & mobile-friendly motorcycle wheelie simulator. No downloads required—start performing stunts now!">
+    <meta name="keywords"
+        content="wheelie life, wheelie life game, wheelie life online, wheelie life unblocked, wheelie life free, motorcycle wheelie simulator, soflo wheelie life, free motorcycle game, online stunt game, wheelie simulator, browser game, motorcycle physics game, stunt leaderboards, chromebook games unblocked">
+    <meta name="author" content="Soflo Wheelie Life">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.wheelielife.top/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.wheelielife.top/">
+    <meta property="og:title" content="Wheelie Life Game 🏍️ Play Free Wheelie Simulator Online (Unblocked)">
+    <meta property="og:description"
+        content="Play the official Wheelie Life game online for free! 🎮 Unblocked & mobile-friendly motorcycle wheelie simulator. Start performing stunts now!">
+    <meta property="og:image" content="https://wheelielife.top/assets/og-image.jpg">
+    <meta property="og:site_name" content="Wheelie Life">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.wheelielife.top/">
+    <meta property="twitter:title" content="Wheelie Life Game 🏍️ Play Free Wheelie Simulator Online (Unblocked)">
+    <meta property="twitter:description"
+        content="Play the official Wheelie Life game online for free! 🎮 Unblocked & mobile-friendly motorcycle wheelie simulator. Start performing stunts now!">
+    <meta property="twitter:image" content="https://wheelielife.top/assets/twitter-card.jpg">
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Wheelie Life",
+      "alternateName": "Soflo Wheelie Life",
+      "description": "A free online motorcycle wheelie simulator and stunt game set in South Florida. Use realistic bike physics, master wheelie balance, and chain insane tricks to climb the stunt leaderboards.",
+      "url": "https://www.wheelielife.top/",
+      "image": "https://www.wheelielife.top/assets/og-image.jpg",
+      "genre": ["Racing", "Simulation", "Stunt", "Sports"],
+      "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+      "playMode": "SinglePlayer",
+      "applicationCategory": "Game",
+      "operatingSystem": "Any (Web Browser)",
+      "inLanguage": "en",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1547",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "gameItem": {
+        "@type": "Thing",
+        "name": "Motorcycle"
+      },
+      "keywords": "wheelie, motorcycle game, stunt game, browser game, free game, wheelie simulator, South Florida",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Wheelie Life",
+        "url": "https://www.wheelielife.top/"
+      }
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Wheelie Life",
+      "url": "https://www.wheelielife.top/",
+      "logo": "https://www.wheelielife.top/assets/logo.png",
+      "sameAs": []
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.wheelielife.top/"
+      }]
+    }
+    </script>
+
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0c0c0e;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --accent-cyan: #00f2ff;
+            --accent-green: #39ff14;
+            --text-main: #ffffff;
+            --text-muted: #a0a0ab;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(180deg, rgba(0, 242, 255, 0.05) 0%, transparent 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0 0 20px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.3));
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.3));
+            }
+            to {
+                filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.6));
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 900px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+            color: #000;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 242, 255, 0.5);
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .hero-tags span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-tags span::before {
+            content: '✓';
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        /* Game Section */
+        .game-section {
+            padding: 40px 0;
+        }
+
+        .game-intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .game-container {
+            position: relative;
+            margin: 0 auto 40px;
+            max-width: 960px;
+            aspect-ratio: 480 / 360;
+            background: #000;
+            border: 4px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(12, 12, 14, 0.85), rgba(0, 0, 0, 0.7)), url('assets/step1.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .play-overlay:hover {
+            background: linear-gradient(135deg, rgba(12, 12, 14, 0.75), rgba(0, 0, 0, 0.6)), url('assets/step1.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        .play-btn-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .play-overlay:hover .play-btn-circle {
+            transform: scale(1.1);
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.7);
+        }
+
+        .play-overlay span {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+        }
+
+        .game-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .fullscreen-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--accent-cyan);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .fullscreen-btn:hover {
+            background: rgba(0, 242, 255, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+        }
+
+        .fullscreen-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--accent-cyan);
+        }
+
+        .game-container:fullscreen,
+        .game-container:-webkit-full-screen,
+        .game-container:-moz-full-screen,
+        .game-container:-ms-fullscreen {
+            max-width: 100%;
+            aspect-ratio: auto;
+            border-radius: 0;
+            border: none;
+        }
+
+        /* Quick Controls */
+        .quick-controls {
+            max-width: 900px;
+            margin: 0 auto 20px;
+            padding: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+
+        .quick-controls h3 {
+            font-size: 1.5rem;
+            margin: 0 0 20px;
+            color: var(--accent-cyan);
+            text-align: center;
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .control-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .control-key {
+            min-width: 35px;
+            padding: 8px 12px;
+            background: rgba(0, 242, 255, 0.1);
+            border: 1px solid var(--accent-cyan);
+            border-radius: 6px;
+            font-weight: 700;
+            text-align: center;
+            color: var(--accent-cyan);
+            font-size: 0.9rem;
+        }
+
+        .control-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .safety-notice {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid rgba(255, 68, 68, 0.3);
+            border-radius: 8px;
+            color: #ff9999;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Play Other Games */
+        .other-games {
+            max-width: 900px;
+            margin: 40px auto 20px;
+            padding: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+
+        .other-games h3 {
+            font-size: 1.5rem;
+            margin: 0 0 25px;
+            color: var(--accent-green);
+            text-align: center;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2);
+        }
+
+        .game-thumbnail {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            background: linear-gradient(135deg, rgba(0, 242, 255, 0.1), rgba(57, 255, 20, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .game-info {
+            padding: 15px;
+        }
+
+        .game-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin: 0 0 8px;
+            text-align: center;
+        }
+
+        .game-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(57, 255, 20, 0.1);
+            border: 1px solid var(--accent-green);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--accent-green);
+            margin-top: 8px;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 80px 0 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-cyan);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* How to Play Steps */
+        .how-to-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 0 auto 80px;
+        }
+
+        .step {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+        }
+
+        .step-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .step-content {
+            padding: 25px;
+        }
+
+        .step-num {
+            display: inline-block;
+            color: var(--accent-cyan);
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .step h3 {
+            font-size: 1.4rem;
+            margin: 0 0 15px;
+            color: var(--accent-green);
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .step p:last-child {
+            margin-bottom: 0;
+        }
+
+        .step strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .step ul {
+            margin: 15px 0 15px 20px;
+            color: var(--text-muted);
+            line-height: 2;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin: 0 0 15px;
+            color: var(--accent-cyan);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Device Support */
+        .device-support {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+
+        .device-support p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .device-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            text-align: left;
+        }
+
+        .device-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .device-item strong {
+            color: var(--accent-green);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .device-item span {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 80px;
+        }
+
+        .faq-item {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .faq-item h3 {
+            font-size: 1.3rem;
+            margin: 0 0 15px;
+            color: var(--accent-green);
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .faq-item strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* More Content Section */
+        .more-content {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+
+        .content-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .content-link {
+            display: block;
+            padding: 25px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--accent-cyan);
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .content-link:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-cta {
+                font-size: 1.1rem;
+                padding: 15px 40px;
+            }
+
+            .hero-tags {
+                font-size: 0.85rem;
+                gap: 15px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .step h3 {
+                font-size: 1.5rem;
+            }
+
+            .game-container {
+                margin: 20px 10px;
+            }
+
+            .controls-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+            /* Mobile Touch Controls Gamepad */
+        .mobile-controls-panel {
+            display: none;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            margin: 20px auto;
+            max-width: 960px;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-controls-panel {
+                display: flex !important;
+            }
+        }
+
+        .gamepad-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 65px;
+            height: 65px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid var(--accent-cyan);
+            border-radius: 50%;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1rem;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 242, 255, 0.2);
+            transition: all 0.1s ease;
+        }
+
+        .gamepad-btn:active {
+            background: var(--accent-cyan);
+            color: #000;
+            transform: scale(0.95);
+            box-shadow: 0 0 15px var(--accent-cyan);
+        }
+
+        .gamepad-btn.green-btn {
+            border-color: var(--accent-green);
+            box-shadow: 0 4px 10px rgba(57, 255, 20, 0.2);
+        }
+
+        .gamepad-btn.green-btn:active {
+            background: var(--accent-green);
+            box-shadow: 0 0 15px var(--accent-green);
+        }
+
+        .gamepad-btn-label {
+            font-size: 9px;
+            opacity: 0.8;
+            text-transform: uppercase;
+            margin-top: 2px;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Wheelie Life – Free Motorcycle Wheelie Stunt Game Online</h1>
+            <p class="hero-subtitle">
+                Wheelie Life is a free online motorcycle wheelie simulator and stunt game set in South Florida. 
+                Use realistic bike physics, master wheelie balance, and chain insane tricks to climb the stunt 
+                leaderboards – all in your browser, no download required.
+            </p>
+            <a href="#game" class="hero-cta">Play Now</a>
+            <div class="hero-tags">
+                <span>Free to play</span>
+                <span>No download</span>
+                <span>Browser game</span>
+                <span>Desktop & mobile</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Game Section -->
+        <section id="game" class="game-section">
+            <p class="game-intro-text">Jump into the streets of South Florida and start your stunt session.</p>
+            
+            <div class="game-container" id="gameContainer">
+                <button class="fullscreen-btn" id="fullscreenBtn" title="Toggle fullscreen mode" aria-label="Toggle fullscreen" style="display: none;">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+                    </svg>
+                </button>
+                <div class="play-overlay" id="playOverlay">
+                    <div class="play-btn-circle">
+                        <svg viewBox="0 0 24 24" width="40" height="40">
+                            <path d="M8 5v14l11-7z" fill="#000"/>
+                        </svg>
+                    </div>
+                    <span>Play Now</span>
+                </div>
+            </div>
+
+            <!-- Quick Controls -->
+            <!-- Mobile Touch Controls Gamepad -->
+            <div class="mobile-controls-panel" id="mobileControlsPanel">
+                <div class="gamepad-btn green-btn" id="btnA">
+                    <span>A</span>
+                    <span class="gamepad-btn-label">Brake</span>
+                </div>
+                <div class="gamepad-btn" id="btnW">
+                    <span>W</span>
+                    <span class="gamepad-btn-label">Stand</span>
+                </div>
+                <div class="gamepad-btn" id="btnS">
+                    <span>S</span>
+                    <span class="gamepad-btn-label">Knee</span>
+                </div>
+                <div class="gamepad-btn" id="btnF">
+                    <span>F</span>
+                    <span class="gamepad-btn-label">Bike</span>
+                </div>
+                <div class="gamepad-btn green-btn" id="btnD">
+                    <span>D</span>
+                    <span class="gamepad-btn-label">Gas</span>
+                </div>
+            </div>
+
+            <div class="quick-controls">
+                <h3>Quick Controls</h3>
+                <div class="controls-grid">
+                    <div class="control-item">
+                        <span class="control-key">A</span>
+                        <span class="control-desc">Brake and lean back</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">D</span>
+                        <span class="control-desc">Throttle / move forward</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">S</span>
+                        <span class="control-desc">Knee trick</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">W</span>
+                        <span class="control-desc">Seat stand</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">E</span>
+                        <span class="control-desc">Hand drag</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">R</span>
+                        <span class="control-desc">No hands</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">F</span>
+                        <span class="control-desc">Change bikes</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">G</span>
+                        <span class="control-desc">Change helmets</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">C</span>
+                        <span class="control-desc">Foot over bar</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="control-key">D + Space</span>
+                        <span class="control-desc">Accelerate without wheelie</span>
+                    </div>
+                </div>
+                <p class="safety-notice">
+                    ⚠️ Enjoy the stunt life in-game only – do not try these tricks in real life.
+                </p>
+            </div>
+
+            <!-- Play Other Games -->
+            <div class="other-games">
+                <h3>Play Other Games</h3>
+                <div class="games-grid">
+                    <a href="moto-x3m.html" class="game-card" aria-label="Play Moto X3M motorcycle racing game">
+                        <div class="game-thumbnail">
+                            <img src="https://i.imgur.com/ahKFPfz.png" alt="Moto X3M game" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="game-info">
+                            <div class="game-title">Moto X3M</div>
+                            <p class="game-desc">Extreme bike racing with crazy stunts and obstacles</p>
+                            <span class="coming-soon-badge" style="background: rgba(0, 242, 255, 0.1); border-color: var(--accent-cyan); color: var(--accent-cyan);">Play Now</span>
+                        </div>
+                    </a>
+
+                    <a href="bike-trials.html" class="game-card" aria-label="Play Bike Trials motorcycle balance game">
+                        <div class="game-thumbnail">
+                            <img src="https://i.imgur.com/5aQ0KY1.png" alt="Bike Trials game" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="game-info">
+                            <div class="game-title">Bike Trials</div>
+                            <p class="game-desc">Master balance and precision in challenging trials</p>
+                            <span class="coming-soon-badge" style="background: rgba(0, 242, 255, 0.1); border-color: var(--accent-cyan); color: var(--accent-cyan);">Play Now</span>
+                        </div>
+                    </a>
+
+                    <a href="stunt-rider.html" class="game-card" aria-label="Play Stunt Rider motorcycle stunt game">
+                        <div class="game-thumbnail">
+                            <img src="https://i.imgur.com/MydaH7p.png" alt="Stunt Rider game" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="game-info">
+                            <div class="game-title">Stunt Rider</div>
+                            <p class="game-desc">Perform epic stunts in urban environments</p>
+                            <span class="coming-soon-badge" style="background: rgba(0, 242, 255, 0.1); border-color: var(--accent-cyan); color: var(--accent-cyan);">Play Now</span>
+                        </div>
+                    </a>
+
+                    <a href="#bike-race-pro" class="game-card" aria-label="Play Bike Race Pro - Coming Soon">
+                        <div class="game-thumbnail" role="img" aria-label="Bike Race Pro game icon">🏆</div>
+                        <div class="game-info">
+                            <div class="game-title">Bike Race Pro</div>
+                            <p class="game-desc">Compete in fast-paced motorcycle races</p>
+                            <span class="coming-soon-badge">Coming Soon</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Play Section -->
+        <h2 class="section-title">How to Play Wheelie Life</h2>
+        <div class="how-to-steps">
+            <div class="step">
+                <img src="assets/step1.png"
+                    alt="Wheelie Life Game - Click green flag to start motorcycle wheelie stunt session"
+                    class="step-img"
+                    width="400"
+                    height="200"
+                    loading="lazy">
+                <div class="step-content">
+                    <span class="step-num">STEP 01</span>
+                    <h3>1. Start Your Stunt Session</h3>
+                    <p>
+                        Click the neon green flag to start your ride in a South Florida city. Use <strong>D</strong> to 
+                        throttle forward and <strong>A</strong> to brake and control your wheelie angle.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <img src="assets/step2.png"
+                    alt="Wheelie Life Controls - Master motorcycle balance with keyboard controls" 
+                    class="step-img"
+                    width="400"
+                    height="200"
+                    loading="lazy">
+                <div class="step-content">
+                    <span class="step-num">STEP 02</span>
+                    <h3>2. Master Wheelies and Balance</h3>
+                    <p>
+                        Tap <strong>D</strong> to lift the front wheel and use <strong>A</strong> to keep your balance 
+                        without flipping over. For pure acceleration without a wheelie, hold <strong>D and Space</strong> 
+                        at the same time. Learning this balance is the key to high scores in this motorcycle wheelie simulator.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <img src="assets/step3.png" 
+                    alt="Wheelie Life Scoring - Build combos and dominate stunt leaderboards"
+                    class="step-img"
+                    width="400"
+                    height="200"
+                    loading="lazy">
+                <div class="step-content">
+                    <span class="step-num">STEP 03</span>
+                    <h3>3. Chain Tricks and Climb the Leaderboards</h3>
+                    <p>
+                        Once your wheelie is stable, start adding tricks with <strong>W</strong>, <strong>S</strong>, 
+                        <strong>E</strong>, and <strong>R</strong>. Use:
+                    </p>
+                    <ul>
+                        <li><strong>S</strong> for a knee trick</li>
+                        <li><strong>W</strong> for a seat stand</li>
+                        <li><strong>E</strong> for a hand drag</li>
+                        <li><strong>R</strong> for no-hands</li>
+                    </ul>
+                    <p>
+                        Combine tricks, keep your wheelie going, and avoid crashing to build massive combos and push 
+                        your score up the global stunt leaderboards.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Features Section -->
+        <h2 class="section-title">Game Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Realistic wheelie physics</h3>
+                <p>
+                    Experience responsive motorcycle physics where throttle, brake, and body position control every stunt.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Deep trick system</h3>
+                <p>
+                    Use W, S, E, and R for seat stands, knee tricks, hand drags, and no-hands combos. Mix tricks 
+                    during wheelies for higher scores and style points.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Bike and helmet customization</h3>
+                <p>
+                    Press F to change bikes and G to change helmets, find your perfect stunt setup, and ride in 
+                    your own style.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>South Florida stunt life</h3>
+                <p>
+                    Ride through a SoFlo-inspired city built for bike life, wheelies, and long stunt lines.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Global online leaderboards</h3>
+                <p>
+                    Compete against riders worldwide and see where your stunts rank.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Free browser game – no download</h3>
+                <p>
+                    Play instantly in your browser on desktop or mobile – no installation, no hidden costs.
+                </p>
+            </div>
+        </div>
+
+        <!-- Device Support Section -->
+        <h2 class="section-title">Play on Any Device</h2>
+        <div class="device-support">
+            <p>
+                Wheelie Life is fully responsive and optimized for both desktop and mobile browsers. You can enjoy 
+                smooth motorcycle wheelie action on your computer, laptop, tablet, or phone – directly in your browser.
+            </p>
+            <div class="device-list">
+                <div class="device-item">
+                    <strong>Desktop & laptop</strong>
+                    <span>Best control with A, D, W, S, E, R, F, G, C, and Space.</span>
+                </div>
+                <div class="device-item">
+                    <strong>Tablet</strong>
+                    <span>Quick stunt sessions on a bigger touch screen.</span>
+                </div>
+                <div class="device-item">
+                    <strong>Mobile browser</strong>
+                    <span>Play on the go without downloading anything.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <h2 class="section-title">Wheelie Life FAQ – Frequently Asked Questions</h2>
+        <div class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+            
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 itemprop="name">What is Wheelie Life?</h3>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        Wheelie Life (Soflo Wheelie Life) is a free online motorcycle wheelie simulator and stunt game. 
+                        It focuses on realistic bike balance, wheelie tricks, and chasing high scores in a South 
+                        Florida–inspired city.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 itemprop="name">How do I play Wheelie Life?</h3>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        Use <strong>A</strong> and <strong>D</strong> to control your bike: D for throttle and A for 
+                        brake and balance. Once your wheelie is stable, add tricks with <strong>W</strong>, 
+                        <strong>S</strong>, <strong>E</strong>, and <strong>R</strong>. You can change bikes with 
+                        <strong>F</strong>, change helmets with <strong>G</strong>, and use <strong>C</strong> for a 
+                        foot over bar. For acceleration without a wheelie, hold <strong>D and Space</strong> at the 
+                        same time.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 itemprop="name">Is Wheelie Life free to play?</h3>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        Yes. Wheelie Life is 100% free to play. This motorcycle wheelie game runs completely in your 
+                        web browser with no downloads, no installation, and no hidden costs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 itemprop="name">Can I play Wheelie Life on mobile?</h3>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        Absolutely. Wheelie Life is fully responsive and optimized for mobile browsers. Just open the 
+                        game on your phone or tablet and start riding – no app store required.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 itemprop="name">Is Wheelie Life a realistic motorcycle wheelie simulator?</h3>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        Wheelie Life is designed to capture the feel of stunt riding in a simple, accessible browser 
+                        game. Throttle, brake, balance, and timing all matter if you want to hold long wheelies and 
+                        land big tricks.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 itemprop="name">Do I need to download or install anything?</h3>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        No. Wheelie Life is a browser-based motorcycle stunt game. Just open the website, hit play, 
+                        and you are riding instantly without any downloads.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 itemprop="name">Should I try these wheelie tricks in real life?</h3>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        No. Wheelie Life is a safe way to enjoy stunt riding in a game. Do not try these tricks in 
+                        real life – keep the stunts on screen only.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- More Content Section -->
+        <h2 class="section-title">More from Wheelie Life</h2>
+        <div class="more-content">
+            <div class="content-links">
+                <a href="#tips" class="content-link" aria-label="Read Wheelie Life tips and tricks guide">Wheelie Life Tips & Tricks</a>
+                <a href="#physics" class="content-link" aria-label="Learn about motorcycle wheelie physics">Motorcycle Wheelie Physics Explained</a>
+                <a href="#games" class="content-link" aria-label="Discover more online bike stunt games">Best Online Bike Stunt Games</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            &copy; 2025 Wheelie Life. Built with passion for the ride.
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll to game section
+        document.querySelector('.hero-cta').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('game').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Lazy load game iframe
+        const gameContainer = document.getElementById('gameContainer');
+        const playOverlay = document.getElementById('playOverlay');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+        if (playOverlay) {
+            playOverlay.addEventListener('click', function() {
+                // Create iframe dynamically
+                const iframe = document.createElement('iframe');
+                iframe.src = 'SofloWheelieLife.html';
+                iframe.title = 'Wheelie Life - Free Motorcycle Wheelie Stunt Game';
+                iframe.setAttribute('allowfullscreen', '');
+                iframe.setAttribute('loading', 'lazy');
+                
+                // Remove overlay and append iframe
+                playOverlay.remove();
+                gameContainer.appendChild(iframe);
+                
+                // Show fullscreen button
+                if (fullscreenBtn) fullscreenBtn.style.display = 'flex';
+            });
+        }
+
+        // Fullscreen functionality
+        if (fullscreenBtn) {
+            fullscreenBtn.addEventListener('click', function () {
+                if (!document.fullscreenElement &&
+                    !document.webkitFullscreenElement &&
+                    !document.mozFullScreenElement &&
+                    !document.msFullscreenElement) {
+                    // Enter fullscreen
+                    if (gameContainer.requestFullscreen) {
+                        gameContainer.requestFullscreen();
+                    } else if (gameContainer.mozRequestFullScreen) {
+                        gameContainer.mozRequestFullScreen();
+                    } else if (gameContainer.webkitRequestFullscreen) {
+                        gameContainer.webkitRequestFullscreen();
+                    } else if (gameContainer.msRequestFullscreen) {
+                        gameContainer.msRequestFullscreen();
+                    }
+                } else {
+                    // Exit fullscreen
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                }
+            });
+        }
+
+        // Update button icon when fullscreen state changes
+        document.addEventListener('fullscreenchange', updateFullscreenButton);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenButton);
+        document.addEventListener('mozfullscreenchange', updateFullscreenButton);
+        document.addEventListener('MSFullscreenChange', updateFullscreenButton);
+
+        function updateFullscreenButton() {
+            if (!fullscreenBtn) return;
+            const isFullscreen = document.fullscreenElement ||
+                document.webkitFullscreenElement ||
+                document.mozFullScreenElement ||
+                document.msFullscreenElement;
+
+            if (isFullscreen) {
+                fullscreenBtn.innerHTML = `
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/>
+                    </svg>
+                `;
+                fullscreenBtn.title = 'Exit Fullscreen';
+            } else {
+                fullscreenBtn.innerHTML = `
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                    </svg>
+                `;
+                fullscreenBtn.title = 'Fullscreen';
+            }
+        }
+    </script>
+
+        <!-- Mobile Touch Gamepad Controller Logic -->
+    <script>
+        (function() {
+            const panel = document.getElementById("mobileControlsPanel");
+            const isTouch = ("ontouchstart" in window) || (navigator.maxTouchPoints > 0);
+            
+            if (isTouch && panel) {
+                panel.style.display = "flex";
+                
+                const keys = {
+                    btnA: { key: "a", code: "KeyA", keyCode: 65 },
+                    btnD: { key: "d", code: "KeyD", keyCode: 68 },
+                    btnW: { key: "w", code: "KeyW", keyCode: 87 },
+                    btnS: { key: "s", code: "KeyS", keyCode: 83 },
+                    btnF: { key: "f", code: "KeyF", keyCode: 70 }
+                };
+
+                function sendKeyEvent(type, keyInfo) {
+                    try {
+                        const iframe = document.querySelector(".game-container iframe");
+                        if (!iframe || !iframe.contentWindow) return;
+                        
+                        const event = new KeyboardEvent(type, {
+                            key: keyInfo.key,
+                            code: keyInfo.code,
+                            keyCode: keyInfo.keyCode,
+                            which: keyInfo.keyCode,
+                            bubbles: true,
+                            cancelable: true,
+                            view: iframe.contentWindow
+                        });
+                        
+                        iframe.contentWindow.document.dispatchEvent(event);
+                        iframe.contentWindow.dispatchEvent(event);
+                    } catch (err) {
+                        console.warn("Touch control key dispatch failed. Check same-origin policy.", err);
+                    }
+                }
+
+                Object.keys(keys).forEach(id => {
+                    const btn = document.getElementById(id);
+                    if (!btn) return;
+                    
+                    const keyInfo = keys[id];
+                    
+                    btn.addEventListener("touchstart", function(e) {
+                        e.preventDefault();
+                        sendKeyEvent("keydown", keyInfo);
+                    });
+                    
+                    btn.addEventListener("touchend", function(e) {
+                        e.preventDefault();
+                        sendKeyEvent("keyup", keyInfo);
+                    });
+                });
+            }
+        })();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GHQ3S1667"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-8GHQ3S1667');
+    </script>
+
+</body>
+</html>
