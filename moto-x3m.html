@@ -483,7 +483,96 @@
             background-clip: text;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
         }
-</style>
+
+        /* More Unblocked Bike Games Section */
+        .other-games {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 35px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+        }
+
+        .other-games h2 {
+            font-size: 1.8rem;
+            margin: 0 0 25px;
+            color: var(--accent-green);
+            text-align: center;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2);
+        }
+
+        .game-thumbnail {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            background: linear-gradient(135deg, rgba(0, 242, 255, 0.1), rgba(57, 255, 20, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .game-info {
+            padding: 18px;
+        }
+
+        .game-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin: 0 0 8px;
+            text-align: center;
+        }
+
+        .game-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0 0 12px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .play-card-badge {
+            display: block;
+            text-align: center;
+            padding: 6px 12px;
+            background: rgba(0, 242, 255, 0.1);
+            border: 1px solid var(--accent-cyan);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -748,6 +837,47 @@
             </div>
         </section>
 
+    
+        <!-- More Unblocked Bike Games Section -->
+        <section class="other-games">
+            <h2>More Unblocked Bike Games</h2>
+            <div class="games-grid">
+
+                    <a href="index.html" class="game-card" aria-label="Play Wheelie Life Unblocked motorcycle stunt game">
+                        <div class="game-thumbnail">
+                            <img src="assets/og-image.jpg" alt="Wheelie Life Unblocked game" width="200" height="140" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="game-info">
+                            <div class="game-title">Wheelie Life Unblocked</div>
+                            <p class="game-desc">Realistic South Florida street stunt simulator with custom bikes and helmets.</p>
+                            <span class="play-card-badge">Play Flagship Game →</span>
+                        </div>
+                    </a>
+
+                    <a href="bike-trials.html" class="game-card" aria-label="Play Bike Trials Unblocked motorcycle balance game">
+                        <div class="game-thumbnail">
+                            <img src="https://i.imgur.com/5aQ0KY1.png" alt="Bike Trials Unblocked game" width="200" height="140" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="game-info">
+                            <div class="game-title">Bike Trials Unblocked</div>
+                            <p class="game-desc">Master precision obstacle balance, throttle modulation, and gap jumps.</p>
+                            <span class="play-card-badge">Play Trials Game →</span>
+                        </div>
+                    </a>
+
+                    <a href="stunt-rider.html" class="game-card" aria-label="Play Stunt Rider Unblocked 3D motorcycle stunt game">
+                        <div class="game-thumbnail">
+                            <img src="https://i.imgur.com/MydaH7p.png" alt="Stunt Rider Unblocked game" width="200" height="140" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="game-info">
+                            <div class="game-title">Stunt Rider Unblocked</div>
+                            <p class="game-desc">High-altitude 3D rooftop jumps, giant corkscrews, and aerial spin combos.</p>
+                            <span class="play-card-badge">Play 3D Stunts →</span>
+                        </div>
+                    </a>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
